@@ -1,10 +1,10 @@
 import 'card_model.dart';
 
-class CreditCard extends CardModel {
+class CreditDebitCardModel extends CardModel {
   final String limit;
   final String amountSpent;
 
-  CreditCard({
+  CreditDebitCardModel({
     required String number,
     required String flag,
     required String cvv,
