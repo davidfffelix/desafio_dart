@@ -30,7 +30,7 @@ class SavingsAccount extends AccountModel {
     // Converte savings
     final convertedSavings = double.parse(savings);
 
-    if (convertedSavings >= 1) {
+    if (convertedSavings >= 0.01) {
       amount = 0.0006 * convertedSavings;
       stdout.write('O rendimento da poupança é $amount.');
       // M = 10.000 (1+0,15)10

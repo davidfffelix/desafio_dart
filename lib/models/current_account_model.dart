@@ -22,16 +22,22 @@ class CurrentAccountModel extends AccountModel {
 
   void makeLoan() {
     double? amountReleased;
+
     //>> Recebe renda do usuário
     stdout.write('Digite a sua renda mensal: ');
     String? entryIncome = stdin.readLineSync();
+    // Se o valor de entrada (entryIncome) for nulo, será atribuído o valor '0.0'.
     entryIncome ??= '0.0'; // Igual if
+    // if (entryIncome == null) {
+    //   entryIncome = '0.0';
+    // }
     // Converte entryIncome
     final convertedIncome = double.parse(entryIncome);
     //>> Verificar se a renda libera o empréstimo (>1000). Se for maior,
     //>> o usuário poderá solicitar um empréstimo de até 30% do seu saldo.
     if (convertedIncome > 1000) {
-      amountReleased = (30 / 100) * convertedIncome;
+      // converte 
+      amountReleased = 0.3 * convertedIncome;
       stdout.write('Empréstimo foi liberado. O valor liberado é $amountReleased.');
     }
     //>> Se o valor for <1000 que o empréstimo não liberado.
