@@ -5,12 +5,25 @@ class NameValidation {
     if (name == null || name.trim().isEmpty) {
       return 'Enter with your name.';
     }
-    if (!RegExp(r'^([A-Z][a-z]{2,}\ ?([A-Z][a-z]{7,}))$').hasMatch(name)) {
+    if (!RegExp(r'^([A-Za-z]{3,}\ ?([A-Z][a-z]{3,})\ ?([A-Za-z]{0,}))$').hasMatch(name)) {
       return 'Incorrect name.';
     }
     return null;
   }
 }
+
+// class NameValidation {
+//   static bool nameValidate(String name) {
+//     if (name.trim().isEmpty) {
+//       return false;
+//     }
+//     if (!RegExp(r'^([a-zA-Z]{3,})(\ [a-zA-Z]{3,})+$').hasMatch(name)) {
+//       return false;
+//     } else {
+//       return true;
+//     }
+//   }
+// }
 
 // Nome Completo
 // Válidos:
