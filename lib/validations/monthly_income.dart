@@ -3,7 +3,7 @@ class MonthlyIncome {
     if (income == null) {
       return null;
     }
-    if (!RegExp(r'^[0-9]+[.][0-9]+$').hasMatch(income)) {
+    if (!RegExp(r'^[0-9]+[.][0-9]{2}$').hasMatch(income)) {
       return 'Incorrect monthly income.';
     }
     return null;

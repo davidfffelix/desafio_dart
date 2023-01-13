@@ -17,7 +17,7 @@ class CardNumberValidation {
     if (mastercardNumber == null || mastercardNumber.trim().isEmpty) {
       return 'Enter your Mastercard card number.';
     }
-    if (!RegExp(r'^4[0-9]{1,4}\ ([0-9]{4})\ ([0-9]{4})\ ([0-9]{4})$').hasMatch(mastercardNumber)) {
+    if (!RegExp(r'^(4[0-9]{3}) ?([0-9]{4}) ?([0-9]{4}) ?([0-9]{4})$').hasMatch(mastercardNumber)) {
       return 'Incorrect Mastercard card number.';
     }
     return null;
