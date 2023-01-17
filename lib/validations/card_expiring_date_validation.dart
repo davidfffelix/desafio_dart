@@ -3,8 +3,8 @@ class CardExpiringDate {
     if (card == null || card.trim().isEmpty) {
       return 'Enter with your card expiration date';
     }
-    if (!RegExp(r'^$').hasMatch(card)) {
-      return 'Your card expiration date is incorrect.';
+    if (!RegExp(r'^([0-9]{2})[/-]([0-9]{2})$').hasMatch(card)) {
+      return 'Your card expiration date is incorrect. Your card expiration date is incorrect. Enter the month and year.';
     }
   }
 }
