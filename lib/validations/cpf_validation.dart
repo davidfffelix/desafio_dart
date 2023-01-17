@@ -1,8 +1,9 @@
 void main() {
-  primeiroDigitoVerificador('52998224725');
+  tenthDigitChecker('52998224725');
+  eleventhDigitChecker('52998224725');
 }
 
-bool primeiroDigitoVerificador(String cpf) {
+bool tenthDigitChecker(String cpf) {
   // Pegar o 1° dígito e multiplicar por 10
 
   int firstDigit = int.parse(cpf[0]);
