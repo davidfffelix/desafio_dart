@@ -49,7 +49,13 @@ class CPFValidation {
     int multiResult = totalResult * 10;
     print('Resultado do passo 1: $multiResult.');
 
-    
+    int rest = multiResult % 11;
+
+    // if (rest == 10) {
+    //   rest = 0;
+    // }
+
+
 
 
 
