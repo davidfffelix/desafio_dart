@@ -7,4 +7,12 @@ class CardExpiringDate {
       return 'Your card expiration date is incorrect. Your card expiration date is incorrect. Enter the month and year.';
     }
   }
+
+  // static bool cardValidityChecker(String card) {
+  //   DateTime date = DateTime.parse();
+  //   DateTime datetime = DateTime.now();
+
+  //   if ()
+
+  // }
 }

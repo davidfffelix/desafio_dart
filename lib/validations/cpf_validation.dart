@@ -6,13 +6,13 @@ class CpfValidation {
     if (!RegExp(r'^([0-9]{3})\.([0-9]{3})\.([0-9]{3})\-([0-9]{2})$').hasMatch(cpf)) {
       return 'CPF with invalid format';
     }
-    // String cpfNumbers = cpf.replaceAll(RegExp(r'[.-]'), '');
-    if (!tenthDigitChecker(cpf)) {
+    String cpfNumbers = cpf.replaceAll(RegExp(r'[.-]'), '');
+    if (!tenthDigitChecker(cpfNumbers)) {
       // Ele espera um valor convertido e com replaceAll acontece essa conversão.
       // Inverte o retorno do método que é true
       return 'CPF inválido';
     }
-    if (!eleventhDigitChecker(cpf)) {
+    if (!eleventhDigitChecker(cpfNumbers)) {
       // Inverte o retorno do método que é true
       return 'CPF inválido';
     }
@@ -20,6 +20,8 @@ class CpfValidation {
 
   // 13230430732
   // 132.304.307-32
+  // Porque ele espera um valor inteiro e acabando chegando uma String com o .-.
+  // Por isso, o replaceAll
   static bool tenthDigitChecker(String cpf) {
     // Pegar o 1° dígito e multiplicar por 10
 
