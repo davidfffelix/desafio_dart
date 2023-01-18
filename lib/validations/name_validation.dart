@@ -1,14 +1,13 @@
 class NameValidation {
-  static String? nameValidation({
-    String? name,
+  static bool isNameValidation({
+    required String name,
   }) {
-    if (name == null || name.trim().isEmpty) {
-      return 'Enter with your name.';
-    }
+    
     if (!RegExp(r'^([A-Za-záã]{3,}) ([A-Z][a-z]{3,}) ?([A-Za-z]{0,})$').hasMatch(name)) {
-      return 'Incorrect name.';
+      print('Incorrect name.');
+      return false;
     }
-    return null;
+    return true;
   }
 }
 
@@ -17,6 +16,8 @@ class NameValidation {
 // Válidos:
 
 // Ana Whatever
+
+
 // Inválidos:
 
 // An
