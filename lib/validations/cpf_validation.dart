@@ -1,21 +1,12 @@
 class CpfValidation {
-  static String? cpfValidation({String? cpf}) {
-    if (cpf == null || cpf.trim().isEmpty) {
-      return 'Enter with your CPF';
-    }
+  static bool validation({required String cpf}) {
     if (!RegExp(r'^([0-9]{3})\.([0-9]{3})\.([0-9]{3})\-([0-9]{2})$').hasMatch(cpf)) {
-      return 'CPF with invalid format';
+      print('CPF invalid');
+      return false;
     }
-    String cpfNumbers = cpf.replaceAll(RegExp(r'[.-]'), '');
-    if (!tenthDigitChecker(cpfNumbers)) {
-      // Ele espera um valor convertido e com replaceAll acontece essa conversão.
-      // Inverte o retorno do método que é true
-      return 'CPF inválido';
-    }
-    if (!eleventhDigitChecker(cpfNumbers)) {
-      // Inverte o retorno do método que é true
-      return 'CPF inválido';
-    }
+    tenthDigitChecker(cpf);
+
+    return true;
   }
 
   // 13230430732
@@ -24,6 +15,7 @@ class CpfValidation {
   // Por isso, o replaceAll é utilizado para retirar o .-
   static bool tenthDigitChecker(String cpf) {
     // Pegar o 1° dígito e multiplicar por 10
+    String result = cpf.replaceAll('[.-]', '');
 
     int firstDigit = int.parse(cpf[0]);
     int resultFirst = firstDigit * 10;
@@ -141,3 +133,14 @@ class CpfValidation {
     }
   }
 }
+
+// ## CPF
+// Válidos:
+//   - 049.427.230-94
+//   - 358.760.060-09
+//   - 595.956.630-34
+
+// Inválidos:
+//   - 042.427.230-94
+//   - 358.768.060-09
+//   - 595.956.930-34

@@ -4,29 +4,29 @@ import 'package:test/test.dart';
 void main() {
   // Caminho Errado
 
-  test('name incorrect1 ...', () async {
+  test('the name field must return true or empty', () {
     final name = NameValidation.nameValidation(name: '');
     expect(name, false);
   });
 
-  test('name incorrect ...', () async {
+  test('the name field must return wrong', () {
     final name = NameValidation.nameValidation(name: 'An');
     expect(name, false);
   });
 
-  test('name validation ...', () async {
+  test('the name field must return wrong because it has less than 3 characters', () {
     final name = NameValidation.nameValidation(name: 'Ana');
     expect(name, false);
   });
 
-  test('validation ...', () async {
+  test('the name field must return wrong because it contains number', () {
     final name = NameValidation.nameValidation(name: 'Ana Whatever 2');
     expect(name, false);
   });
 
   // Caminho Certo
 
-  test('validation correct ...', () async {
+  test('the name field must return true', () {
     final name = NameValidation.nameValidation(name: 'Ana Whatever');
     expect(name, true);
   });
