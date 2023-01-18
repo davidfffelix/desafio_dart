@@ -36,12 +36,12 @@ void main() {
 
   // Caminho Certo
 
-  test('the phone field must return correct because it was filled in correctly', () {
+  test('the telephone field must return correct because it was filled in correctly', () {
     final telephone = TelephoneValidation.validation(telephone: '(12) 12345-1234');
     expect(telephone, true);
   });
 
-  test('the telephone field must return true or empty', () {
+  test('the telephone field must return correct because the number of digits is correct', () {
     final telephone = TelephoneValidation.validation(telephone: '12123451234');
     expect(telephone, true);
   });

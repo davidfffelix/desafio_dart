@@ -1,5 +1,5 @@
 class MonthlyIncome {
-  static String? income({String? income}) {
+  static String? validation({String? income}) {
     if (income == null) {
       return null;
     }
