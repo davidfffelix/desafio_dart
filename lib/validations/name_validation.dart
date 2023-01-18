@@ -1,8 +1,7 @@
 class NameValidation {
-  static bool isNameValidation({
+  static bool nameValidation({
     required String name,
   }) {
-    
     if (!RegExp(r'^([A-Za-záã]{3,}) ([A-Z][a-z]{3,}) ?([A-Za-z]{0,})$').hasMatch(name)) {
       print('Incorrect name.');
       return false;

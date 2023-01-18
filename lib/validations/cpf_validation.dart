@@ -21,7 +21,7 @@ class CpfValidation {
   // 13230430732
   // 132.304.307-32
   // Porque ele espera um valor inteiro e acabando chegando uma String com o .-.
-  // Por isso, o replaceAll
+  // Por isso, o replaceAll é utilizado para retirar o .-
   static bool tenthDigitChecker(String cpf) {
     // Pegar o 1° dígito e multiplicar por 10
 
@@ -67,7 +67,7 @@ class CpfValidation {
     int multiResult = totalResult * 10;
     print('Resultado do passo 1: $multiResult.');
 
-    int tenthDigit = multiResult % 11; // Resto
+    int tenthDigit = multiResult % 11;
 
     if (tenthDigit == 10) {
       // Resto
