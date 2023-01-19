@@ -1,25 +1,21 @@
 class CardNumberValidation {
-  static String? visaNumber({
-    String? visaNumber,
+  static bool visaValidation({
+    required String visaNumber,
   }) {
-    if (visaNumber == null || visaNumber.trim().isEmpty) {
-      return 'Enter your Visa card number.';
-    }
     if (!RegExp(r'^4[0-9]{3}\ ([0-9]{4})\ ([0-9]{4})\ ([0-9]{4})$').hasMatch(visaNumber)) {
-      return 'Incorrect visa card number.';
+      print('Incorrect visa card number.');
+      return false;
     }
-    return null;
+    return true;
   }
 
-  static String? mastercardNumber({
-    String? mastercardNumber,
+  static bool mastercardValidation({
+    required String mastercardNumber,
   }) {
-    if (mastercardNumber == null || mastercardNumber.trim().isEmpty) {
-      return 'Enter your Mastercard card number.';
-    }
     if (!RegExp(r'^(4[0-9]{3}) ?([0-9]{4}) ?([0-9]{4}) ?([0-9]{4})$').hasMatch(mastercardNumber)) {
-      return 'Incorrect Mastercard card number.';
+      print('Incorrect Mastercard card number.');
+      return true;
     }
-    return null;
+    return false;
   }
 }

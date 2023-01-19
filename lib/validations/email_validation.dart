@@ -1,6 +1,6 @@
 class EmailValidation {
-  static bool emailValidator({
-    required String email, // Parâmetro da função
+  static bool validation({
+    required String email,
   }) {
     if (!RegExp(r'^[a-zA-Z][a-zA-Z0-9_.]+@(outlook|gmail|hotmail)(\.com)(\.br)?$').hasMatch(email)) {
       print('Incorrect e-mail.');

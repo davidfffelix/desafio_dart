@@ -33,6 +33,6 @@ void main() {
 
   test('the password field must return correct because it was filled in correctly', () {
     final telephone = PasswordValidation.validation(password: '01234567');
-    expect(telephone, false);
+    expect(telephone, true);
   });
 }
