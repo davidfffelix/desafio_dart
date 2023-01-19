@@ -69,11 +69,23 @@ void main() {
   // Caminho Correto
   // Visa
   test('the Visa card must return correctly because it starts with 4 and contains 16 digits', () {
-    final cardNumber = CardNumberValidation.mastercardValidation(mastercardNumber: '4322880127539904');
+    final cardNumber = CardNumberValidation.visaValidation(visaNumber: '4322880127539904');
     expect(cardNumber, false);
   });
 
   test('the Visa card must return correct because it was filled in correctly with the spaces', () {
+    final cardNumber = CardNumberValidation.visaValidation(visaNumber: '4771 8012 0341 2904');
+    expect(cardNumber, false);
+  });
+
+  // Mastercard
+
+  test('the Mastercard must return correctly because it starts with 4 and contains 16 digits', () {
+    final cardNumber = CardNumberValidation.mastercardValidation(mastercardNumber: '4322880127539904');
+    expect(cardNumber, false);
+  });
+
+  test('the Mastercard must return correct because it was filled in correctly with the spaces', () {
     final cardNumber = CardNumberValidation.mastercardValidation(mastercardNumber: '4771 8012 0341 2904');
     expect(cardNumber, false);
   });

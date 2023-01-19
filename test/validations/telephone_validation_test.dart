@@ -34,7 +34,7 @@ void main() {
     expect(telephone, false);
   });
 
-  // Caminho Certo
+  // Caminho Correto
 
   test('the telephone field must return correct because it was filled in correctly', () {
     final telephone = TelephoneValidation.validation(telephone: '(12) 12345-1234');

@@ -1,11 +1,10 @@
 class CardExpiringDate {
-  static String? cardExpiringDate({String? card}) {
-    if (card == null || card.trim().isEmpty) {
-      return 'Enter with your card expiration date';
-    }
+  static bool cardExpiringDate({required String card}) {
     if (!RegExp(r'^([0-9]{2})[/-]([0-9]{2})$').hasMatch(card)) {
-      return 'Your card expiration date is incorrect. Your card expiration date is incorrect. Enter the month and year.';
+      print('Your card expiration date is incorrect. Enter the month and year.');
+      return false;
     }
+    return true;
   }
 
   // static bool cardValidityChecker(String card) {

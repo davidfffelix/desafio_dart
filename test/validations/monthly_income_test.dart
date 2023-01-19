@@ -2,8 +2,7 @@ import 'package:desafio_dart/validations/monthly_income.dart';
 import 'package:test/test.dart';
 
 void main() {
-  // TODO: Verificar o null e o campo vazio com a Ray
-  // Caminho errado
+  // Caminho Errado
 
   test('the monthly income must return true or empty', () {
     final telephone = MonthlyIncome.validation(income: '');
@@ -15,7 +14,7 @@ void main() {
     expect(telephone, false);
   });
 
-  // Caminho feliz
+  // Caminho Correto
   test('the monthly income must return null', () {
     final telephone = MonthlyIncome.validation(income: null);
     expect(telephone, null);

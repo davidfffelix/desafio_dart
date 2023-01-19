@@ -2,7 +2,7 @@ import 'package:desafio_dart/validations/password_validation.dart';
 import 'package:test/test.dart';
 
 void main() {
-  // Caminho errado
+  // Caminho Errado
 
   test('the password field must return true or empty', () {
     final telephone = PasswordValidation.validation(password: '');
@@ -29,7 +29,7 @@ void main() {
     expect(telephone, false);
   });
 
-  // Caminho certo
+  // Caminho Correto
 
   test('the password field must return correct because it was filled in correctly', () {
     final telephone = PasswordValidation.validation(password: '01234567');
