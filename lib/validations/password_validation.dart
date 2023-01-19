@@ -1,14 +1,12 @@
 class PasswordValidation {
-  static String? passwordValidation({
-    String? password,
+  static bool validation({
+    required String password,
   }) {
-    if (password == null || password.trim().isEmpty) {
-      return 'Enter with your password.';
-    }
     if (!RegExp(r'^[0-9]{8}$').hasMatch(password)) {
-      return 'Incorrect password.';
+      print('Incorrect password.');
+      return false;
     }
-    return null;
+    return true;
   }
 }
 
